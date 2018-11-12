@@ -1,3 +1,9 @@
+# Aufgabe a06_4
+# Team ChillyCrabs
+# Author:: Lennart Draeger
+# Author:: Robert Gnehr
+
+# This class lets you Exponentiations with 3 as the base that are usable in ranges.
 class Exponentiation
   attr_reader :value, :exponent
   protected :value
@@ -11,9 +17,9 @@ class Exponentiation
       raise ArgumentError, "Argument has to be an integer."
     end
   end
-
+  # Makes the objects comparable
   def <=>(other)
-    raise ArgumentError, "awd" unless other.is_a?(Exponentiation)
+    raise ArgumentError, "Needs to be of the same class to be comparable." unless other.is_a?(Exponentiation)
     [@value] <=> [other.value]
   end
 
@@ -38,6 +44,4 @@ class Exponentiation
   def to_s
     @value.to_s
   end
-
-
 end

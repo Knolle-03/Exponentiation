@@ -1,7 +1,7 @@
 # Authors:: Lennart Draeger, Robert Gnehr
 # Aufgabe: a06_5
 #
-
+#
 require 'test/unit'
 require_relative 'exponentiation'
 class ExponentiationTest < Test::Unit::TestCase
@@ -17,7 +17,7 @@ class ExponentiationTest < Test::Unit::TestCase
     @range = (@p2..@p8)
     @range2 = (@p2...@p8)
   end
-
+  # Checks if calculation and argument checking works as intended.
   def test_values
     assert_equal((3**-3).to_s, @p2.to_s)
     assert_equal((3**-2).to_s, @p3.to_s)
@@ -30,7 +30,7 @@ class ExponentiationTest < Test::Unit::TestCase
     assert_raise(ArgumentError) {Exponentiation.new(test)}
     assert_nothing_raised(ArgumentError) {Exponentiation.new(Exponentiation.new(3).to_i)}
   end
-
+  # Tests if the objects of the Exponentiation class work as ranges.
   def test_ranges
    assert_equal(@range.begin.to_f, @p2.to_f)
    assert(@range.cover?(@p5))
